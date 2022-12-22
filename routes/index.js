@@ -16,14 +16,16 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect : '/pour-over',
-    failureRedirect : '/pour-over'
+    successRedirect : '/',
+    failureRedirect : '/'
   }
 ));
 
 router.get('/logout', function(req, res){
-  req.logout();
-  res.redirect('/pour-over');
+  req.logout(function() {
+    res.redirect('/');
+  });
+  
 });
 
 
