@@ -6,4 +6,6 @@ router.get('/', recipesCtrl.index)
 
 router.get('/new-recipe', recipesCtrl.new)
 
+router.post('/', recipesCtrl.create)
+
 module.exports = router

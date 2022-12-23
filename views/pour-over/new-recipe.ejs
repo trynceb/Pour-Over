@@ -2,4 +2,22 @@
 
 <h1>This is the New Recipe page</h1>
 
+<form id="new-form" action="/pour-over" method="POST">
+    <label>Name:</label>
+        <input type="text" name="name">
+    <label>Brewer:</label>
+        <input type="text" name="brewer">
+    <label>Grinder:</label>
+        <input type="text" name="grinder">
+    <label>Grind Size:</label>
+        <input type="number" name="grind-size">
+    <label>Weight:</label>
+        <input type="number" name="weight">
+    <label>Temperature:</label>
+        <input type="number" name="temperature">
+    <label>Notes:</label>
+        <input type="text" name="notes">
+    <input type="submit" value="Add Recipe">
+</form>
+
 <%- include('../partials/footer') %>
