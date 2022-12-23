@@ -4,7 +4,8 @@ module.exports = {
     index,
     new: newRecipe,
     create,
-    showAll
+    showAll,
+    showOne
 }
 
 function index(req, res) {
@@ -26,5 +27,11 @@ function create(req, res) {
 function showAll(req, res) {
     Recipe.find({}, function(err, recipes) {
         res.render("pour-over/recipes", { title: "All Recipes", recipes })
+    })
+}
+
+function showOne(req, res) {
+    Recipe.findById(req.params.id, function(err, recipe) {
+        res.render("pour-over/show", { title: "Recipe", recipe })
     })
 }

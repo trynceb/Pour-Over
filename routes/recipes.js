@@ -11,6 +11,8 @@ router.post('/', recipesCtrl.create)
 
 router.get('/recipes', recipesCtrl.showAll)
 
+router.get('/:id', recipesCtrl.showOne)
+
 // OAuth routes
 router.get('/auth/google', passport.authenticate(
     'google',
