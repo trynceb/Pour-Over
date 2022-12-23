@@ -7,11 +7,9 @@ router.get('/', recipesCtrl.index)
 
 router.get('/new-recipe', recipesCtrl.new)
 
-router.post('/', recipesCtrl.create)
+router.post('/recipes', recipesCtrl.create)
 
 router.get('/recipes', recipesCtrl.showAll)
-
-router.get('/:id', recipesCtrl.showOne)
 
 // OAuth routes
 router.get('/auth/google', passport.authenticate(
@@ -24,8 +22,8 @@ router.get('/auth/google', passport.authenticate(
   router.get('/oauth2callback', passport.authenticate(
     'google',
     {
-      successRedirect : '/pour-over',
-      failureRedirect : '/pour-over'
+      successRedirect : '/',
+      failureRedirect : '/'
     }
   ));
   
@@ -35,9 +33,8 @@ router.get('/auth/google', passport.authenticate(
     });
     
   });
-  
 
-  module.exports = router;
-  
+router.get('/:id', recipesCtrl.showOne)
+
 
 module.exports = router
