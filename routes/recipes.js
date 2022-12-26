@@ -33,6 +33,7 @@ router.get('/auth/google', passport.authenticate(
     });
     
   });
+// end of OAuth routes
 
 router.get('/:id', recipesCtrl.showOne)
 
