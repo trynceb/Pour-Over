@@ -37,5 +37,7 @@ router.get('/auth/google', passport.authenticate(
 
 router.get('/:id', recipesCtrl.showOne)
 
+router.delete('/pour-over/:id', recipesCtrl.delete)
+
 
 module.exports = router

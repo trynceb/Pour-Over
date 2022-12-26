@@ -18,5 +18,8 @@
     <div>Notes: </div>
         <div><%= recipe.notes %></div>
 </section>
+<form action="/pour-over/<%= recipe._id %>?_method=DELETE" method="POST">
+    <button type="submit">Delete</button>
+</form>
 
 <%- include('../partials/footer') %>

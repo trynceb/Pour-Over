@@ -5,7 +5,8 @@ module.exports = {
     new: newRecipe,
     create,
     showAll,
-    showOne
+    showOne,
+    delete: deleteRecipe
 }
 
 function index(req, res) {
@@ -33,5 +34,15 @@ function showAll(req, res) {
 function showOne(req, res) {
     Recipe.findById(req.params.id, function(err, recipe) {
         res.render("pour-over/show", { title: "Recipe", recipe })
+    })
+}
+
+function deleteRecipe(req, res) {
+    Recipe.findById(req.params.id, function(err, recipe) {
+        recipe.remove()
+        recipe.save(function(err) {
+            if (err) return res.redirect("/pour-over/recipes")
+            res.redirect("/pour-over/recipes")
+        })
     })
 }
