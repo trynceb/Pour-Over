@@ -13,6 +13,7 @@ require('./config/passport')
 
 var indexRouter = require('./routes/recipes');
 var pourOverRouter = require('./routes/recipes')
+var brewersRouter = require('./routes/brewers')
 
 var app = express();
 
@@ -41,6 +42,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/pour-over', pourOverRouter)
+app.use('/', brewersRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

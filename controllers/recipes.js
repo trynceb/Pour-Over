@@ -2,15 +2,21 @@ const Recipe = require('../models/recipe')
 
 module.exports = {
     index,
+    equipment,
     new: newRecipe,
     create,
     showAll,
     showOne,
-    delete: deleteRecipe
+    delete: deleteRecipe,
+    update
 }
 
 function index(req, res) {
     res.render("pour-over/index", { title: "Pour-Over" })
+}
+
+function equipment(req, res) {
+    res.render("pour-over/equipment", { title: "Equipment" })
 }
 
 function newRecipe(req, res) {
@@ -44,5 +50,11 @@ function deleteRecipe(req, res) {
             if (err) return res.redirect("/pour-over/recipes")
             res.redirect("/pour-over/recipes")
         })
+    })
+}
+
+function update(req, res) {
+    Recipe.findById(req.params.id, function(err, recipe) {
+
     })
 }

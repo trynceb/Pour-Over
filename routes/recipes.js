@@ -4,11 +4,9 @@ const passport = require('passport')
 const recipesCtrl = require('../controllers/recipes')
 
 router.get('/', recipesCtrl.index)
-
 router.get('/new-recipe', recipesCtrl.new)
-
+router.get('/equipment', recipesCtrl.equipment)
 router.post('/recipes', recipesCtrl.create)
-
 router.get('/recipes', recipesCtrl.showAll)
 
 // OAuth routes
@@ -36,7 +34,6 @@ router.get('/auth/google', passport.authenticate(
 // end of OAuth routes
 
 router.get('/:id', recipesCtrl.showOne)
-
 router.delete('/pour-over/:id', recipesCtrl.delete)
 
 

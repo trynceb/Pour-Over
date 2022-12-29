@@ -1,4 +1,4 @@
-<!<%- include('../partials/header') %>
+<%- include('../partials/header') %>
 
 <h1>This is my show page.</h1>
 
@@ -21,5 +21,11 @@
 <form action="/pour-over/<%= recipe._id %>?_method=DELETE" method="POST">
     <button type="submit">Delete</button>
 </form>
+<form action="/pour-over/<%= recipe._id %>" method="PUT">
+    <button type="submit">Update</button>
+</form>
+
+
+<button><a href="/">BACK</a></button>
 
 <%- include('../partials/footer') %>
