@@ -13,7 +13,7 @@ require('./config/passport')
 
 var indexRouter = require('./routes/recipes');
 var pourOverRouter = require('./routes/recipes')
-var brewersRouter = require('./routes/brewers')
+var brewersRouter = require('./routes/brewers');
 
 var app = express();
 
