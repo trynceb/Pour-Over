@@ -3,7 +3,9 @@
 <h1>This is the Equipment Page</h1>
 
 <div>Brewers: </div>
-    <ul></ul>
+        <% brewers.forEach(function(b) { %>
+            <ul><%= b.name %></ul>
+        <% }); %>
 <div>Grinders: </div>
     <ul></ul>
 

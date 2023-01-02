@@ -7,11 +7,4 @@ const brewerSchema = new Schema({
     timestamps: true
 })
 
-const grinderSchema = new Schema({
-    name: String
-}, {
-    timestamps: true
-})
-
 module.exports = mongoose.model('Brewer', brewerSchema)
-module.exports = mongoose.model('Grinder', grinderSchema)

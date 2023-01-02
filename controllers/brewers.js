@@ -7,17 +7,21 @@ module.exports = {
 }
 
 function index(req, res){
-    res.render('equipment/index', { title: "Equipment" })
+    Brewer.find({}, function (err, brewers) {
+        res.render('equipment/index', { title: "Equipment", brewers })
+    })
 }
 
 function create(req, res) {
-    Brewer.create(req.body, function (err) {
-        res.redirect('/equipment/new')
+    const brewer = new Brewer (req.body)
+    brewer.save(req.body, function (err) {
+        if (err) res.redirect('/equipment/new')
+        res.redirect('equipment/index')
     })
 }
 
 function newBrewer(req, res) {
     Brewer.find({}, function (err, brewers) {
-        res.render('equipment/new', { title: "Add Equipment", brewers})
+        res.render('equipment/new', { title: "Add Equipment", brewers })
     })
 }
