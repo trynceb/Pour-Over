@@ -2,13 +2,14 @@
 
 <h1>New Equipment Page</h1>
 
+<label>Add: </label>
+<select name="equipment">
+    <option value="Brewer">Brewer</option>
+    <option value="Grinder">Grinder</option>
+</select>
+<br>
 <form id="new-equipment" action="/equipment" method="POST">
-    <label>Add: </label>
-    <select name="equipment">
-        <option value="Brewer">Brewer</option>
-        <option value="Grinder">Grinder</option>
-    </select>
-    <input type="text">
+    <input type="text" name="name">
     <input type="submit" value="Add Equipment">
 </form>
 

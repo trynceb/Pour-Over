@@ -7,7 +7,9 @@
             <ul><%= b.name %></ul>
         <% }); %>
 <div>Grinders: </div>
-    <ul></ul>
+        <% grinders.forEach(function(g) { %>
+            <ul><%= g.name %></ul>
+        <% }); %>
 
 
 <button><a href="/equipment/new">Add Equipment</a></button>

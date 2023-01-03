@@ -1,4 +1,5 @@
 const Brewer = require('../models/brewer')
+const Grinder = require('../models/grinder')
 
 module.exports = {
     index,
@@ -8,13 +9,15 @@ module.exports = {
 
 function index(req, res){
     Brewer.find({}, function (err, brewers) {
-        res.render('equipment/index', { title: "Equipment", brewers })
+        Grinder.find({}, function (err, grinders) {
+            res.render('equipment/index', { title: "Equipment", brewers, grinders })
+        })
     })
 }
 
 function create(req, res) {
     const brewer = new Brewer (req.body)
-    brewer.save(req.body, function (err) {
+    brewer.save(function (err) {
         if (err) res.redirect('/equipment/new')
         res.redirect('equipment/index')
     })
