@@ -6,7 +6,11 @@
     <label>Name:</label>
         <input type="text" name="name">
     <label>Brewer:</label>
-        <input type="text" name="brewer">
+        <select name="brewer">
+        <%- brewers.map(b =>
+        `<option value="${b._id}">${b.name}</option>`
+        ) %>
+        </select>
     <label>Grinder:</label>
         <input type="text" name="grinder">
     <label>Grind Size:</label>

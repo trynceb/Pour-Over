@@ -1,4 +1,6 @@
 const Recipe = require('../models/recipe')
+const Brewer = require('../models/brewer')
+const recipe = require('../models/recipe')
 
 module.exports = {
     index,
@@ -20,7 +22,12 @@ function equipment(req, res) {
 }
 
 function newRecipe(req, res) {
-    res.render("pour-over/new-recipe", { title: "New Recipe" } )
+    Brewer.find(
+        {_id: {$nin: recipe.brewer}},
+        function(err, brewers) {
+            res.render("pour-over/new-recipe", { title: "New Recipe", brewers } )
+        }
+    )
 }
 
 function create(req, res) {
