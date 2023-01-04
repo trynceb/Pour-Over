@@ -1,10 +1,8 @@
 <%- include('../partials/header') %>
 
-<h1>This is the New Recipe page</h1>
-
-<form class="form-group" action="/pour-over/recipes" method="POST">
+<form id="edit-page" action="/pour-over/<%= recipe._id %>?_method=PUT" method="POST">
     <label>Name:</label>
-        <input type="text" name="name">
+        <input type="text" name="name" value="<%= recipe.name %>">
     <label>Brewer:</label>
         <select name="brewer">
         <%- brewers.map(b =>
@@ -18,15 +16,15 @@
         ) %>
         </select>
     <label>Grind Size:</label>
-        <input type="number" name="grindSize">
+        <input type="number" name="grindSize" value="<%= recipe.grindSize %>">
     <label>Weight:</label>
-        <input type="number" name="weight">
+        <input type="number" name="weight" value="<%= recipe.weight %>">
     <label>Temperature:</label>
         <input type="number" name="temperature">
     <label>Notes:</label>
         <input type="text" name="notes">
-    <input type="submit" value="Add Recipe">
+    <input type="submit" value="Update">
 </form>
 
-<button><a href="/">BACK</a></button>
+
 <%- include('../partials/footer') %>

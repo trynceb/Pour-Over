@@ -1,5 +1,6 @@
 const Brewer = require('../models/brewer')
 const Grinder = require('../models/grinder')
+const Recipe = require('../models/recipe')
 
 module.exports = {
     index,
@@ -16,6 +17,8 @@ function index(req, res){
 }
 
 function create(req, res) {
+    console.log(req.body)
+    console.log("HI")
     const brewer = new Brewer (req.body)
     brewer.save(function (err) {
         if (err) res.redirect('/equipment/new')
@@ -28,3 +31,12 @@ function newBrewer(req, res) {
         res.render('equipment/new', { title: "Add Equipment", brewers })
     })
 }
+
+// function newBrewer(req, res) {
+//     Recipe.find(
+//         {_id: {$nin: recipe}},
+//         function(err, brewers, recipes) {
+//             res.render('equipment/new', { title: "Add Equipment", brewers, recipes })
+//         }
+//     )
+// }

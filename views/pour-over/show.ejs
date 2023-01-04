@@ -21,9 +21,8 @@
 <form action="/pour-over/<%= recipe._id %>?_method=DELETE" method="POST">
     <button type="submit">Delete</button>
 </form>
-<form action="/pour-over/<%= recipe._id %>" method="PUT">
-    <button type="submit">Update</button>
-</form>
+<button><a href="/pour-over/<%= recipe._id %>/edit">Edit</a></button>
+
 
 
 <button><a href="/">BACK</a></button>
