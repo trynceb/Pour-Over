@@ -1,12 +1,24 @@
 <%- include('../partials/header') %>
 
-<h1>This is the Home Page in pour-over</h1>
 
-<button><a href="../equipment/index">Your Equipment</a></button>
-
-<button><a href="/pour-over/new-recipe">Create a Recipe</a></button>
-
-<button><a href="/pour-over/recipes">Your Recipes</a></button>
+<div class="d-flex flex-column">
+    <div class="p-2 mx-auto mb-3">
+      <button type="button" class="btn btn-outline-primary btn-lg btn-block">
+        <a class="text-decoration-none text-dark" href="/pour-over/recipes">Your Recipes</a>
+      </button>
+    </div>
+    <div class="p-2 mx-auto mb-3">
+      <button type="button" class="btn btn-outline-primary btn-lg btn-block">
+        <a class="text-decoration-none text-dark" href="/pour-over/new-recipe">Create a Recipe</a>
+      </button>
+    </div>
+    <div class="p-2 mx-auto">
+      <button type="button" class="btn btn-outline-primary btn-lg btn-block">
+        <a class="text-decoration-none text-dark" href="../equipment/index">Your Equipment</a>
+      </button>
+    </div>
+  </div>
+  
 
 
 <%- include('../partials/footer') %>

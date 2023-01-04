@@ -1,32 +1,35 @@
 <%- include('../partials/header') %>
 
-<h1>This is the New Recipe page</h1>
+<div class="container">
+  <form action="/pour-over/recipes" method="POST" class="border rounded p-3 mb-3">
+    <div class="form-group">
+      <label class="form-label">Name:</label>
+      <input type="text" name="name" class="form-control"/>
+      <label>Brewer:</label>
+      <select name="brewer" class="form-control">
+        <%- brewers.map(b => `
+          <option value="${b._id}">${b.name}</option>
+          ` ) %>
+      </select>
+      <label>Grinder:</label>
+      <select name="grinder" class="form-control">
+        <%- grinders.map(g => `
+          <option value="${g._id}">${g.name}</option>
+          ` ) %>
+      </select>
+      <label class="form-label">Grind Size:</label>
+        <input type="number" name="grindSize" class="form-control"/>
+      <label class="form-label">Weight:</label>
+        <input type="number" name="weight" class="form-control"/>
+      <label class="form-label">Temperature:</label>
+        <input type="number" name="temperature" class="form-control"/>
+      <label class="form-label">Notes:</label>
+        <input type="text" name="notes" class="form-control"/>
+      <input type="submit" value="Add Recipe" class="btn btn-primary mt-3"/>
+    </div>
+  </form>
+</div>
 
-<form class="form-group" action="/pour-over/recipes" method="POST">
-    <label>Name:</label>
-        <input type="text" name="name">
-    <label>Brewer:</label>
-        <select name="brewer">
-        <%- brewers.map(b =>
-        `<option value="${b._id}">${b.name}</option>`
-        ) %>
-        </select>
-    <label>Grinder:</label>
-    <select name="grinder">
-        <%- grinders.map(g =>
-        `<option value="${g._id}">${g.name}</option>`
-        ) %>
-        </select>
-    <label>Grind Size:</label>
-        <input type="number" name="grindSize">
-    <label>Weight:</label>
-        <input type="number" name="weight">
-    <label>Temperature:</label>
-        <input type="number" name="temperature">
-    <label>Notes:</label>
-        <input type="text" name="notes">
-    <input type="submit" value="Add Recipe">
-</form>
 
-<button><a href="/">BACK</a></button>
+<button class="btn btn-outline-dark ms-5"><a class="text-decoration-none" href="/">BACK</a></button>
 <%- include('../partials/footer') %>

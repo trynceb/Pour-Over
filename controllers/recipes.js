@@ -90,7 +90,7 @@ function edit(req, res) {
                 Grinder.find(
                     {_id: {$nin: recipe.grinder}},
                     function(err, grinders) {
-                        res.render("pour-over/edit", { title: "Edit Page", recipe, brewers, grinders})
+                        res.render("pour-over/edit", { title: "Edit", recipe, brewers, grinders})
                     }
                 )
             }
