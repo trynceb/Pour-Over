@@ -4,13 +4,13 @@
     <label>Name:</label>
         <input type="text" name="name" value="<%= recipe.name %>">
     <label>Brewer:</label>
-        <select name="brewer">
+        <select name="brewer" value="<%= recipe.brewer %>">
         <%- brewers.map(b =>
         `<option value="${b._id}">${b.name}</option>`
         ) %>
         </select>
     <label>Grinder:</label>
-    <select name="grinder">
+    <select name="grinder" value="<%= recipe.grinder %>">
         <%- grinders.map(g =>
         `<option value="${g._id}">${g.name}</option>`
         ) %>
@@ -20,9 +20,9 @@
     <label>Weight:</label>
         <input type="number" name="weight" value="<%= recipe.weight %>">
     <label>Temperature:</label>
-        <input type="number" name="temperature">
+        <input type="number" name="temperature" value="<%= recipe.temperature %>">
     <label>Notes:</label>
-        <input type="text" name="notes">
+        <input type="text" name="notes" value="<%= recipe.notes %>">
     <input type="submit" value="Update">
 </form>
 

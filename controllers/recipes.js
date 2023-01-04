@@ -83,26 +83,41 @@ function deleteRecipe(req, res) {
 }
 
 function edit(req, res) {
-    Recipe.findById(req.params.id)
-    Brewer.find(
-        {_id: {$nin: recipe.brewer}},
-        function(err, brewers) {
-            Grinder.find(
-                {_id: {$nin: recipe.grinder}},
-                function(err, grinders) {
-                    res.render("pour-over/edit", { title: "Edit Page", recipe, brewers, grinders})
-                }
-            )
-        }
-    )
+    Recipe.findById(req.params.id, function(err, recipe) {
+        Brewer.find(
+            {_id: {$nin: recipe.brewer}},
+            function(err, brewers) {
+                Grinder.find(
+                    {_id: {$nin: recipe.grinder}},
+                    function(err, grinders) {
+                        res.render("pour-over/edit", { title: "Edit Page", recipe, brewers, grinders})
+                    }
+                )
+            }
+        )
+    })
 }
 
-function update(req, res) {
-    Recipe.findById(req.params.id)
-        .update(req.body)
-        recipe.save(function(err) {
-            if (err) return res.redirect("/pour-over/recipes")
-            res.redirect("/pour-over/recipes")
-        })
+// function update(req, res) {
+//     Recipe.findById(req.params.id)
+//         .update(req.body)
+//         recipe.save(function(err) {
+//             if (err) return res.redirect("/pour-over/recipes")
+//             res.redirect("/pour-over/recipes")
+//         })
+// }
+
+async function update(req, res) {
+    try{
+        const filter = {_id: req.params.id}
+            let recipe = await Recipe.findOneAndUpdate(filter, req.body, {
+                upsert: true
+            })
+        await recipe.save((err) => {
+                return res.redirect("/recipes/")
+            })
+    } catch {(err) => {
+    console.warn(err.message)
+    }}
 }
 
