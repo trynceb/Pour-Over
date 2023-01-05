@@ -5,26 +5,26 @@
     <div class="form-group">
       <label class="form-label">Name:</label>
       <input type="text" name="name" class="form-control"/>
-      <label>Brewer:</label>
+      <label class="mt-1 mb-2">Brewer:</label>
       <select name="brewer" class="form-control">
         <%- brewers.map(b => `
           <option value="${b._id}">${b.name}</option>
           ` ) %>
       </select>
-      <label>Grinder:</label>
+      <label class="mt-1 mb-2">Grinder:</label>
       <select name="grinder" class="form-control">
         <%- grinders.map(g => `
           <option value="${g._id}">${g.name}</option>
           ` ) %>
       </select>
-      <label class="form-label">Grind Size:</label>
+      <label class="form-label mt-1">Grind Size:</label>
         <input type="number" name="grindSize" class="form-control"/>
-      <label class="form-label">Weight:</label>
+      <label class="form-label mt-1">Weight:</label>
         <input type="number" name="weight" class="form-control"/>
-      <label class="form-label">Temperature:</label>
+      <label class="form-label mt-1">Temperature:</label>
         <input type="number" name="temperature" class="form-control"/>
-      <label class="form-label">Notes:</label>
-        <input type="text" name="notes" class="form-control"/>
+      <label class="form-label mt-1">Notes:</label>
+        <textarea name="notes" rows="5" cols="50" class="form-control"></textarea>
       <input type="submit" value="Add Recipe" class="btn btn-primary mt-3"/>
     </div>
   </form>
