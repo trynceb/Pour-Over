@@ -1,9 +1,6 @@
 const Recipe = require('../models/recipe')
 const Brewer = require('../models/brewer')
 const Grinder = require('../models/grinder')
-const recipe = require('../models/recipe')
-
-
 
 module.exports = {
     index,
@@ -25,85 +22,82 @@ function equipment(req, res) {
     res.render("pour-over/equipment", { title: "Equipment" })
 }
 
-function newRecipe(req, res) {
-    Brewer.find(
-        {_id: {$nin: recipe.brewer}},
-        function(err, brewers) {
-            Grinder.find(
-                {_id: {$nin: recipe.grinder}},
-                function(err, grinders) {
-                    res.render("pour-over/new-recipe", { title: "New Recipe", brewers, grinders } )
-                }
-            )
-        }
-    )
-}
-
-function create(req, res) {
-    const recipe = new Recipe(req.body)
-    recipe.save(function(err) {
-        if (err) return res.redirect("/pour-over/new-recipe")
-        res.redirect("/pour-over/recipes")
-    })
-}
-
-function showAll(req, res) {
-    Recipe.find({}, function(err, recipes) {
-        res.render("pour-over/recipes", { title: "All Recipes", recipes })
-    })
-}
-
-function showOne(req, res) {
-    Recipe.findById(req.params.id)
-        .populate('brewer')
-        .populate('grinder')
-        .exec(function(err, recipe) {
-            if (err) {
-                res.send(err);
-            }
-            res.render("pour-over/show", { title: "Recipe", recipe })
-        });
-}
-
-
-function deleteRecipe(req, res) {
-    Recipe.findById(req.params.id, function(err, recipe) {
-        recipe.remove()
-        recipe.save(function(err) {
-            if (err) return res.redirect("/pour-over/recipes")
-            res.redirect("/pour-over/recipes")
+async function newRecipe(req, res) {
+    try {
+        const brewers = await Brewer.find({_id: {$nin: recipe.brewer}})
+        const grinders = await Grinder.find({_id: {$nin: recipe.grinder}})
+        res.render("pour-over/new-recipe", {
+            title: "New Recipe", 
+            brewers, 
+            grinders
         })
-    })
+    } catch (err) {
+        console.warn(err.message)
+    }
 }
 
-function edit(req, res) {
-    Recipe.findById(req.params.id, function(err, recipe) {
-        Brewer.find(
-            {_id: {$nin: recipe.brewer}},
-            function(err, brewers) {
-                Grinder.find(
-                    {_id: {$nin: recipe.grinder}},
-                    function(err, grinders) {
-                        res.render("pour-over/edit", { title: "Edit", recipe, brewers, grinders})
-                    }
-                )
-            }
-        )
-    })
+async function create(req, res) {
+    const recipe = new Recipe(req.body)
+    try {
+        await recipe.save()
+        res.redirect("/pour-over/recipes")
+    } catch (err) {
+        res.redirect("/pour-over/new-recipe")
+    }
 }
 
+async function showAll(req, res) {
+    try {
+        const recipes = await Recipe.find({})
+        res.render("pour-over/recipes", { title: "All Recipes", recipes })
+    } catch (err) {
+        console.warn(err.message)
+    }
+}
+
+async function showOne(req, res) {
+    try {
+        const recipe = await Recipe.findById(req.params.id)
+        .populate("brewer")
+        .populate("grinder")
+        .exec()
+        res.render("pour-over/show", { title: "Recipe", recipe })
+    } catch (err) {
+        console.warn(err.message)
+    }
+}
+
+async function deleteRecipe(req, res) {
+    try {
+        const recipe = await Recipe.findById(req.params.id)
+        recipe.remove()
+        await recipe.save()
+        res.redirect("/pour-over/recipes")
+    } catch (err) {
+        res.redirect("/pour-over/recipes")
+    }
+}
+
+async function edit(req, res) {
+    try {
+        const recipe = await Recipe.findById(req.params.id)
+        const brewers = await Brewer.find({_id: {$nin: recipe.brewer}})
+        const grinders = await Grinder.find({_id: {$nin: recipe.grinder}})
+        res.render("pour-over/edit", { title: "Edit", recipe, brewers, grinders})
+    } catch (err) {
+        console.warn(err.message)
+    }
+}
 
 async function update(req, res) {
-    try{
+    try {
         const filter = {_id: req.params.id}
-            let recipe = await Recipe.findOneAndUpdate(filter, req.body, {
+            const recipe = await Recipe.findOneAndUpdate(filter, req.body, {
                 upsert: true
             })
-        await recipe.save((err) => {
-                return res.redirect("/recipes/")
-            })
-    } catch {(err) => {
-    console.warn(err.message)
-    }}
+        await recipe.save()
+        res.redirect("/recipes/")
+    } catch (err) {
+        console.warn(err.message)
+    }
 }
-

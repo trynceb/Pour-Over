@@ -3,12 +3,12 @@ const Grinder = require('../models/grinder')
 const Recipe = require('../models/recipe')
 
 module.exports = {
-    index,
-    create,
-    new: newBrewer
+    index: listEquipment,
+    create: addBrewer,
+    new: newBrewerForm
 }
 
-async function index(req, res) {
+async function listEquipment(req, res) {
     try {
         const brewers = await Brewer.find({})
         const grinders = await Grinder.find({})
@@ -18,7 +18,7 @@ async function index(req, res) {
     }
 }
 
-async function create(req, res) {
+async function addBrewer(req, res) {
     try {
         const brewer = new Brewer (req.body)
         await brewer.save()
@@ -28,7 +28,7 @@ async function create(req, res) {
     }
 }
 
-async function newBrewer(req, res) {
+async function newBrewerForm(req, res) {
     try {
         const brewers = await Brewer.find({})
         res.render('equipment/new', { title: "Add Equipment", brewers })

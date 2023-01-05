@@ -1,20 +1,26 @@
 const Grinder = require('../models/grinder')
 
 module.exports = {
-    create,
-    new: newGrinder
+    create: addGrinder,
+    new: newGrinderForm
 }
 
-function create(req, res) {
-    const grinder = new Grinder (req.body)
-    grinder.save(function (err) {
-        if (err) res.redirect('/equipment/new')
-        res.redirect('equipment/index')
-    })
+async function addGrinder(req, res) {
+    try {
+        const grinder = new Grinder (req.body)
+        await grinder.save()
+        res.redirect('euipment/index')
+    } catch (err) {
+        res.redirect('/equipment/new')
+    }
 }
 
-function newGrinder(req, res) {
-    Grinder.find({}, function (err, grinders) {
-        res.render('equipment/new', { title: "Add Equipment", grinders })
-    })
+
+async function newGrinderForm(req, res) {
+    try {
+        const grinders = await Grinder.find({})
+        res.render('equipment/new', { title: "Add Equipment", grinders})
+    } catch (err) {
+        console.warn(err.message)
+    }
 }
