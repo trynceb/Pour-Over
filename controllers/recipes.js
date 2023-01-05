@@ -54,23 +54,17 @@ function showAll(req, res) {
 }
 
 function showOne(req, res) {
-    Recipe.findById(req.params.id, function(err, recipe) {
-        res.render("pour-over/show", { title: "Recipe", recipe })
-    })
+    Recipe.findById(req.params.id)
+        .populate('brewer')
+        .populate('grinder')
+        .exec(function(err, recipe) {
+            if (err) {
+                res.send(err);
+            }
+            res.render("pour-over/show", { title: "Recipe", recipe })
+        });
 }
 
-// function showOne(req, res) {
-//     Recipe.findById(req.params.id)
-//         .populate("brewer")
-//         .exec(function(err, brewer) {
-//             Brewer.find(
-//                 {_id: {$nin: recipe.brewer}},
-//                 function(err, brewers) {
-//                     res.render("pour-over/show", { title: "Recipe", recipe, brewers })
-//                 }
-//             )
-//         })
-// }
 
 function deleteRecipe(req, res) {
     Recipe.findById(req.params.id, function(err, recipe) {
@@ -98,14 +92,6 @@ function edit(req, res) {
     })
 }
 
-// function update(req, res) {
-//     Recipe.findById(req.params.id)
-//         .update(req.body)
-//         recipe.save(function(err) {
-//             if (err) return res.redirect("/pour-over/recipes")
-//             res.redirect("/pour-over/recipes")
-//         })
-// }
 
 async function update(req, res) {
     try{

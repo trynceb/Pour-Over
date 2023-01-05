@@ -1,18 +1,31 @@
 <%- include('../partials/header') %>
 
-<h1>This is the Equipment Page</h1>
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-6">
+        <h3>Brewers</h3>
+        <ul class="list-group">
+          <% brewers.forEach(function(b) { %>
+            <li class="list-group-item"><%= b.name %></li>
+          <% }); %>
+        </ul>
+      </div>
+      <div class="col-6">
+        <h3>Grinders</h3>
+        <ul class="list-group">
+          <% grinders.forEach(function(g) { %>
+            <li class="list-group-item"><%= g.name %></li>
+          <% }); %>
+        </ul>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-12 text-center">
+        <a href="/equipment/new" class="btn btn-primary">Add Equipment</a>
+        <a href="/" class="btn btn-secondary">BACK</a>
+      </div>
+    </div>
+  </div>
+  
 
-<div>Brewers: </div>
-        <% brewers.forEach(function(b) { %>
-            <ul><%= b.name %></ul>
-        <% }); %>
-<div>Grinders: </div>
-        <% grinders.forEach(function(g) { %>
-            <ul><%= g.name %></ul>
-        <% }); %>
-<br>
-<br>
-
-<button><a href="/equipment/new">Add Equipment</a></button>
-<button><a href="/">BACK</a></button>
 <%- include('../partials/footer') %>
