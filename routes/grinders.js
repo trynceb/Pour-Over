@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 const grindersCtrl = require('../controllers/grinders');
+const isLoggedIn = require('../config/auth')
 
-// router.get('/equipment/index', grindersCtrl.index)
-router.get('/equipment/new', grindersCtrl.new)
-router.post('/equipment', grindersCtrl.create)
+router.get('/equipment/new', isLoggedIn, grindersCtrl.new)
+router.post('/equipment', isLoggedIn, grindersCtrl.create)
 
 module.exports = router

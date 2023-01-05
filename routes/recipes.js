@@ -2,11 +2,12 @@ var express = require('express');
 var router = express.Router();
 const passport = require('passport')
 const recipesCtrl = require('../controllers/recipes')
+const isLoggedIn = require('../config/auth')
 
 router.get('/', recipesCtrl.index)
-router.get('/new-recipe', recipesCtrl.new)
+router.get('/new-recipe', isLoggedIn, recipesCtrl.new)
 router.get('/equipment', recipesCtrl.equipment)
-router.post('/recipes', recipesCtrl.create)
+router.post('/recipes', isLoggedIn, recipesCtrl.create)
 router.get('/recipes', recipesCtrl.showAll)
 
 // OAuth routes
@@ -33,10 +34,10 @@ router.get('/auth/google', passport.authenticate(
   });
 // end of OAuth routes
 
-router.get('/:id', recipesCtrl.showOne)
-router.delete('/pour-over/:id', recipesCtrl.delete)
-router.get('/pour-over/:id/edit', recipesCtrl.edit)
-router.put('/pour-over/:id', recipesCtrl.update)
+router.get('/:id', isLoggedIn, recipesCtrl.showOne)
+router.delete('/pour-over/:id', isLoggedIn, recipesCtrl.delete)
+router.get('/pour-over/:id/edit', isLoggedIn, recipesCtrl.edit)
+router.put('/pour-over/:id', isLoggedIn, recipesCtrl.update)
 
 
 

@@ -10,8 +10,9 @@ const recipeSchema = new Schema( {
     weight: Number,
     temperature: Number,
     notes: String,
-    // _id: ObjectId,
-    // createdByUser: ObjectId
+    user: {type: Schema.Types.ObjectId, ref: "User"},
+    userName: String,
+    userAvatar: String
 }, {
     timestamps: true
 })

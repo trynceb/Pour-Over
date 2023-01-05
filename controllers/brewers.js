@@ -8,35 +8,31 @@ module.exports = {
     new: newBrewer
 }
 
-function index(req, res){
-    Brewer.find({}, function (err, brewers) {
-        Grinder.find({}, function (err, grinders) {
-            res.render('equipment/index', { title: "Equipment", brewers, grinders })
-        })
-    })
+async function index(req, res) {
+    try {
+        const brewers = await Brewer.find({})
+        const grinders = await Grinder.find({})
+        res.render('equipment/index', { title: "Equipment", brewers, grinders })
+    } catch (err) {
+        console.warn(err.message)
+    }
 }
 
-function create(req, res) {
-    console.log(req.body)
-    console.log("HI")
-    const brewer = new Brewer (req.body)
-    brewer.save(function (err) {
-        if (err) res.redirect('/equipment/new')
+async function create(req, res) {
+    try {
+        const brewer = new Brewer (req.body)
+        await brewer.save()
         res.redirect('equipment/index')
-    })
+    } catch (err) {
+        res.redirect('/equipment/new')
+    }
 }
 
-function newBrewer(req, res) {
-    Brewer.find({}, function (err, brewers) {
+async function newBrewer(req, res) {
+    try {
+        const brewers = await Brewer.find({})
         res.render('equipment/new', { title: "Add Equipment", brewers })
-    })
+    } catch (err) {
+        console.warn(err.message)
+    }
 }
-
-// function newBrewer(req, res) {
-//     Recipe.find(
-//         {_id: {$nin: recipe}},
-//         function(err, brewers, recipes) {
-//             res.render('equipment/new', { title: "Add Equipment", brewers, recipes })
-//         }
-//     )
-// }

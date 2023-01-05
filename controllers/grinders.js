@@ -1,16 +1,9 @@
 const Grinder = require('../models/grinder')
 
 module.exports = {
-    // index,
     create,
     new: newGrinder
 }
-
-// function index(req, res){
-//     Grinder.find({}, function (err, grinders) {
-//         res.render('equipment/index', { title: "Equipment", grinders })
-//     })
-// }
 
 function create(req, res) {
     const grinder = new Grinder (req.body)
