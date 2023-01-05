@@ -4,8 +4,8 @@ const Schema = mongoose.Schema
 
 const recipeSchema = new Schema( {
     name: String,
-    brewer: [{ type: Schema.Types.ObjectId, ref: "Brewer" }],
-    grinder: [{ type: Schema.Types.ObjectId, ref: "Grinder" }],
+    brewer: { type: Schema.Types.ObjectId, ref: "Brewer" },
+    grinder: { type: Schema.Types.ObjectId, ref: "Grinder" },
     grindSize: Number,
     weight: Number,
     temperature: Number,

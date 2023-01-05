@@ -9,7 +9,10 @@
         <div>Grind Size: <%= recipe.grindSize %></div>
         <div>Weight (g): <%= recipe.weight %></div>
         <div>Temperature (°C): <%= recipe.temperature %></div>
-        <div>Notes: <%= recipe.notes %></div>
+        <div>Notes: 
+          <br>
+          <br>
+          <pre><blockquote class="mb-0"><%= recipe.notes %></blockquote></pre></div>
       </div>
     </div>
     <div class="row mt-3 justify-content-between">
@@ -17,7 +20,6 @@
         <form action="/pour-over/<%= recipe._id %>?_method=DELETE" method="POST">
           <button type="submit" class="btn btn-danger me-2">Delete</button>
           <button class="btn btn-primary me-2"><a class="text-decoration-none text-white" href="/pour-over/<%= recipe._id %>/edit">Edit</a></button>
-          <button class="btn btn-secondary me-2"><a class="text-decoration-none text-white" href="/">BACK</a></button>
         </form>
       </div>
     </div>    

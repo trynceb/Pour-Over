@@ -24,8 +24,8 @@ function equipment(req, res) {
 
 async function newRecipe(req, res) {
     try {
-        const brewers = await Brewer.find({_id: {$nin: recipe.brewer}})
-        const grinders = await Grinder.find({_id: {$nin: recipe.grinder}})
+        const brewers = await Brewer.find({_id: {$nin: Recipe.brewer}})
+        const grinders = await Grinder.find({_id: {$nin: Recipe.grinder}})
         res.render("pour-over/new-recipe", {
             title: "New Recipe", 
             brewers, 
@@ -81,6 +81,9 @@ async function deleteRecipe(req, res) {
 async function edit(req, res) {
     try {
         const recipe = await Recipe.findById(req.params.id)
+        .populate("brewer")
+        .populate("grinder")
+        .exec()
         const brewers = await Brewer.find({_id: {$nin: recipe.brewer}})
         const grinders = await Grinder.find({_id: {$nin: recipe.grinder}})
         res.render("pour-over/edit", { title: "Edit", recipe, brewers, grinders})

@@ -5,17 +5,17 @@
         <label>Name:</label>
         <input type="text" name="name" value="<%= recipe.name %>" class="form-control">
         <label>Brewer:</label>
-            <div class="form-control"><%= recipe.brewer %></div>
+            <div class="form-control"><%= recipe.brewer.name %></div>
         <label>Grinder:</label>
-            <div class="form-control"><%= recipe.grinder %></div>
+            <div class="form-control"><%= recipe.grinder.name %></div>
         <label>Grind Size:</label>
             <input type="number" name="grindSize" value="<%= recipe.grindSize %>" class="form-control">
         <label>Weight (g):</label>
             <input type="number" name="weight" value="<%= recipe.weight %>" class="form-control">
         <label>Temperature (°C):</label>
             <input type="number" name="temperature" value="<%= recipe.temperature %>" class="form-control">
-        <label>Notes:</label>
-            <input type="text" name="notes" value="<%= recipe.notes %>" class="form-control">
+        <label>Notes: </label>
+            <textarea name="notes" value="<%= recipe.notes %>" class="form-control rows="5" cols="50""></textarea>
         <br>
         <button type="submit" class="btn btn-primary">Update</button>
     </div>
