@@ -1,22 +1,27 @@
 <%- include('../partials/header') %>
 
-<table class="table table-responsive">
-    <thead>
-      <tr>
-        <th class="p-3">Title</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% recipes.forEach(function(r) { %>
-        <tr>
-          <td class="display-6 text-right p-3">
-            <%= r.name %>
-          </td>
-          <td class="p-3"><button type="button" class="btn btn-primary"><a class="text-decoration-none text-white" href="/pour-over/<%= r._id %>">DETAILS</a></button></td>
-            </tr>
-        <% }) %>
-    </tbody>
-</table>
+<div class="container mt-3 border rounded p-3 mx-auto">
+  <div class="row">
+    <div class="col-sm-6 text-center">
+      <h4>Title</h4>
+    </div>
+  </div>
+  <% recipes.forEach(function(r) { %>
+    <div class="row mt-3 justify-content-center">
+      <div class="col-sm-6 text-center">
+        <%= r.name %>
+      </div>
+      <div class="col-sm-6 text-center">
+        <a href="/pour-over/<%= r._id %>" class="btn btn-primary btn-sm">DETAILS</a>
+      </div>
+    </div>
+  <% }) %>
+  <div class="row mt-3">
+    <div class="col-sm-12 text-center">
+      <a href="/" class="btn btn-outline-dark btn-sm">BACK</a>
+    </div>
+  </div>
+</div>
 
-<button class="btn btn-outline-dark ms-2"><a class="text-decoration-none" href="/">BACK</a></button>
+
 <%- include('../partials/footer') %>

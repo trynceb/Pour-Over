@@ -8,13 +8,13 @@
   <title><%= title %></title>
 </head>
 <body>
-  
+
   <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e9ecef;">
     <div class="container-fluid">
       <% if (user) { %>
-        <a class="text-decoration-none text-dark ml-auto" href="/logout">LOG OUT</a>
+        <a class="text-decoration-none text-dark" href="/logout">LOG OUT</a>
       <% } else { %>
-        <a class="text-decoration-none text-dark ml-auto" href="/auth/google">LOG IN</a>
+        <a class="text-decoration-none text-dark" href="/auth/google">LOG IN</a>
       <% } %>
     </div>
   </nav>
