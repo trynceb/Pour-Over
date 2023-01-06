@@ -15,7 +15,7 @@
         <label>Temperature (°C):</label>
             <input type="number" name="temperature" value="<%= recipe.temperature %>" class="form-control">
         <label>Notes: </label>
-            <textarea name="notes" value="<%= recipe.notes %>" class="form-control rows="5" cols="50""></textarea>
+            <textarea name="notes" class="form-control rows="10" cols="100"><%= recipe.notes %></textarea>
         <br>
         <button type="submit" class="btn btn-primary">Update</button>
     </div>
