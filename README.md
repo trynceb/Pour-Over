@@ -15,12 +15,12 @@ Welcome to Pour Over! A great way to track, log and share your coffee recipes.
 
 ## User Stories
 - AAU I want to be able to create my own profile.
-- AAU I want to log in and logout
+- AAU I want to log in and logout.
 - AAU I want to be able to to create and record my own brew recipes.
 - AAU I want to be able to add my coffee equipment so I can impliment them into my own recipes.
 - AAU I want to be able to add notes to current recipes.
 - AAU I want to be able to update current recipes.
-- AAU I want to be able to delete old recipes
+- AAU I want to be able to delete old recipes.
 
 ## WireFrames
 [![HzVJuLP.jpg](https://iili.io/HzVJuLP.jpg)](https://freeimage.host/)
@@ -31,7 +31,7 @@ Welcome to Pour Over! A great way to track, log and share your coffee recipes.
 [![HzVdvSa.jpg](https://iili.io/HzVdvSa.jpg)](https://freeimage.host/)
 
 ## Into the App
-Upon opening the app you will be given these 3 choice. Make sure you login first to gain full access of the app!
+Upon opening the app you will be given these 3 choices. Make sure you login first to gain full access!
 
 [![HR6NbgS.md.png](https://iili.io/HR6NbgS.md.png)](https://freeimage.host/i/HR6NbgS)
 [![HR6sgOx.md.png](https://iili.io/HR6sgOx.md.png)](https://freeimage.host/i/HR6sgOx)
@@ -42,6 +42,6 @@ Upon opening the app you will be given these 3 choice. Make sure you login first
 
 ## Icebox
 AAU:
-- I would like to be able to star your favorite recipes.
-- I would like it so you can see other peoples recipes and make your own notes in them that only you can see.
-- I would like to be able to log your individual coffees and make note on them
+- I would like to be able to star my favorite recipes.
+- I want to be able to see other peoples recipes and make my own notes in them that only I can see.
+- I would like to be able to log my individual coffees and make notes on them.
