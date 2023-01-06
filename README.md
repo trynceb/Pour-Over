@@ -3,6 +3,8 @@ Are you obsessed with coffee and find yourself wondering how to brew the best cu
 
 Welcome to Pour Over! A great way to track, log and share your coffee recipes.
 
+[![HR6NbgS.md.png](https://iili.io/HR6NbgS.md.png)](https://freeimage.host/i/HR6NbgS)
+
 ## Technologies Used
 - JavaScript
 - Node.js
@@ -12,13 +14,13 @@ Welcome to Pour Over! A great way to track, log and share your coffee recipes.
 - Bootstrap
 
 ## User Stories
-AAU I want to be able to create my own profile.
-AAU I want to log in and logout
-AAU I want to be able to to create and record my own brew recipes.
-AAU I want to be able to add my coffee equipment so I can impliment them into my own recipes.
-AAU I want to be able to add notes to current recipes.
-AAU I want to be able to update current recipes.
-AAU I want to be able to delete old recipes
+- AAU I want to be able to create my own profile.
+- AAU I want to log in and logout
+- AAU I want to be able to to create and record my own brew recipes.
+- AAU I want to be able to add my coffee equipment so I can impliment them into my own recipes.
+- AAU I want to be able to add notes to current recipes.
+- AAU I want to be able to update current recipes.
+- AAU I want to be able to delete old recipes
 
 ## WireFrames
 [![HzVJuLP.jpg](https://iili.io/HzVJuLP.jpg)](https://freeimage.host/)
@@ -31,7 +33,11 @@ AAU I want to be able to delete old recipes
 ## Into the App
 Upon opening the app you will be given these 3 choice. Make sure you login first to gain full access of the app!
 
-[![HR6cEvV.md.png](https://iili.io/HR6cEvV.md.png)](https://freeimage.host/i/HR6cEvV)
+[![HR6NbgS.md.png](https://iili.io/HR6NbgS.md.png)](https://freeimage.host/i/HR6NbgS)
+[![HR6sgOx.md.png](https://iili.io/HR6sgOx.md.png)](https://freeimage.host/i/HR6sgOx)
+[![HR6ZdSn.md.png](https://iili.io/HR6ZdSn.md.png)](https://freeimage.host/i/HR6ZdSn)
+[![HR6Z5Dx.md.png](https://iili.io/HR6Z5Dx.md.png)](https://freeimage.host/i/HR6Z5Dx)
+[![HR6ZDJe.md.png](https://iili.io/HR6ZDJe.md.png)](https://freeimage.host/i/HR6ZDJe)
 
 
 ## Icebox
