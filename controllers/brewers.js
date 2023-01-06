@@ -1,7 +1,6 @@
 const Brewer = require('../models/brewer')
 const Grinder = require('../models/grinder')
 
-
 module.exports = {
     index: listEquipment,
     create: addBrewer,
