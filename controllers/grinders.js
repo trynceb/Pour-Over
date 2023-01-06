@@ -9,7 +9,7 @@ async function addGrinder(req, res) {
     try {
         const grinder = new Grinder (req.body)
         await grinder.save()
-        res.redirect('euipment/index')
+        res.redirect('equipment/index')
     } catch (err) {
         res.redirect('/equipment/new')
     }
