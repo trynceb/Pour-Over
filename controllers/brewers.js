@@ -1,6 +1,6 @@
 const Brewer = require('../models/brewer')
 const Grinder = require('../models/grinder')
-const Recipe = require('../models/recipe')
+
 
 module.exports = {
     index: listEquipment,
