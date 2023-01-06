@@ -14,8 +14,11 @@
     <div class="container-fluid">
       <% if (user) { %>
         <a class="text-decoration-none text-dark" href="/logout">LOG OUT</a>
-      <% } else { %>
-        <a class="text-decoration-none text-dark" href="/auth/google">LOG IN</a>
+        <% } else { %>
+          <a class="text-decoration-none text-dark" href="/auth/google">LOG IN</a>
+          <% } %>
+      <% if (user && user.avatar) { %>
+        <img src="<%= user.avatar %>" alt="User Avatar" class="rounded-circle img-fluid" width="40" height="40" />
       <% } %>
     </div>
   </nav>
