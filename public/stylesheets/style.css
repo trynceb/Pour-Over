@@ -2,10 +2,42 @@ body {
     background-color: #2d3234;
 }
 
+nav {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 400;
+    background-color: #7d929d;
+}
+
+#log {
+    color: #535859;
+}
+
 #title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
     color: #aaebff;
 }
 
+#index-btn {
+    border-color: #97999a;
+}
+
+#index-btn:hover {
+    background-color: #97999a;
+}
+
 #main-text {
+    font-family: 'Space Mono', monospace;
     color: #ffffff;
+}
+
+#all-recipes-text {
+    font-family: 'Space Mono', monospace;
+    font-size: large;
+    color: #ffffff;
+}
+
+#details-btn {
+    border-color: #4e646c;
+    background-color: #4e646c;
 }
