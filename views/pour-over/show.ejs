@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<div class="container mt-3 p-3">
+<div class="container mt-3 p-3" id="show-text">
     <div class="row">
       <div class="col-sm-6">
         <h5>Recipe: <%= recipe.name %></h5>
@@ -12,14 +12,14 @@
         <div>Notes: 
           <br>
           <br>
-          <pre><blockquote class="mb-0"><%= recipe.notes %></blockquote></pre></div>
+          <pre><blockquote class="mb-0" id="note-text"><%= recipe.notes %></blockquote></pre></div>
       </div>
     </div>
     <div class="row mt-3 justify-content-between">
       <div class="btn-group" role="group">
         <form action="/pour-over/<%= recipe._id %>?_method=DELETE" method="POST">
-          <button class="btn btn-primary me-2"><a class="text-decoration-none text-white" href="/pour-over/<%= recipe._id %>/edit">Edit</a></button>
-          <button type="submit" class="btn btn-danger me-2">Delete</button>
+          <button class="btn btn-primary me-2" id="edit-btn"><a class="text-decoration-none text-white" href="/pour-over/<%= recipe._id %>/edit">Edit</a></button>
+          <button type="submit" class="btn btn-danger me-2" id="delete-btn">Delete</button>
         </form>
       </div>
     </div>    

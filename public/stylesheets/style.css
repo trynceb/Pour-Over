@@ -31,6 +31,10 @@ nav {
     color: #ffffff;
 }
 
+.container {
+    border-color: #b9e4ee;
+}
+
 #all-recipes-text {
     font-family: 'Space Mono', monospace;
     font-size: large;
@@ -40,4 +44,54 @@ nav {
 #details-btn {
     border-color: #4e646c;
     background-color: #4e646c;
+}
+
+#back-btn {
+    border-color: #b9e4ee;
+    color: #ffffff;
+}
+
+#show-text {
+    font-family: 'Space Mono', monospace;
+    font-size: large;
+    color: #ffffff;
+}
+
+#edit-btn {
+    border-color: #5190a3;
+    background-color: #5190a3;
+}
+
+#delete-btn {
+    border-color: #B73f23;
+    background-color: #B73f23;
+}
+
+#edit-page {
+    width: 50%;
+    padding: 2%;
+}
+
+#edit-text {
+    font-family: 'Space Mono', monospace;
+    font-size: large;
+    color: #cbcccc;
+    margin: 5px 0 5px 90px;
+}
+
+#edit-page input, #edit-page textarea {
+    width: 80%;
+    font-size: 14px;
+}
+
+#edit-page input, .form-control {
+    width: 80%;
+    height: 40px;
+    margin: 0 auto;
+}
+
+#update-btn {
+    border-color: #5190a3;
+    background-color: #5190a3;
+    margin-left: 90px;
 }
