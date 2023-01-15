@@ -27,7 +27,7 @@ nav {
 }
 
 #main-text {
-    font-family: 'Space Mono', monospace;
+    font-family: 'Work Sans', sans-serif;
     color: #ffffff;
 }
 
@@ -36,7 +36,7 @@ nav {
 }
 
 #all-recipes-text {
-    font-family: 'Space Mono', monospace;
+    font-family: 'Work Sans', sans-serif;
     font-size: large;
     color: #ffffff;
 }
@@ -52,7 +52,7 @@ nav {
 }
 
 #show-text {
-    font-family: 'Space Mono', monospace;
+    font-family: 'Work Sans', sans-serif;
     font-size: large;
     color: #ffffff;
 }
@@ -73,7 +73,7 @@ nav {
 }
 
 #edit-text {
-    font-family: 'Space Mono', monospace;
+    font-family: 'Work Sans', sans-serif;
     font-size: large;
     color: #cbcccc;
     margin: 5px 0 5px 90px;
