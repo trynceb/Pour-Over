@@ -1,32 +1,32 @@
 <%- include('../partials/header') %>
 
-<div class="container">
+<div class="container" id="new-page">
   <form action="/pour-over/recipes" method="POST" class="border rounded p-3 mb-3">
     <div class="form-group">
-      <label class="form-label">Name:</label>
+      <label class="form-label" id="new-text">Name:</label>
       <input type="text" name="name" class="form-control"/>
-      <label class="mt-1 mb-2">Brewer:</label>
+      <label class="mt-1 mb-2" id="new-text">Brewer:</label>
       <select name="brewer" class="form-control">
         <%- brewers.map(b => `
           <option value="${b._id}">${b.name}</option>
           ` ) %>
       </select>
-      <label class="mt-1 mb-2">Grinder:</label>
+      <label class="mt-1 mb-2" id="new-text">Grinder:</label>
       <select name="grinder" class="form-control">
         <%- grinders.map(g => `
           <option value="${g._id}">${g.name}</option>
           ` ) %>
       </select>
-      <label class="form-label mt-1">Grind Size:</label>
+      <label class="form-label mt-1" id="new-text">Grind Size:</label>
         <input type="number" name="grindSize" class="form-control" step="0.1"/>
-      <label class="form-label mt-1" step="0.1">Weight (g):</label>
+      <label class="form-label mt-1" step="0.1" id="new-text">Weight (g):</label>
         <input type="number" name="weight" class="form-control"/>
-      <label class="form-label mt-1">Temperature (°C):</label>
+      <label class="form-label mt-1" id="new-text">Temperature (°C):</label>
         <input type="number" name="temperature" class="form-control"/>
-      <label class="form-label mt-1">Notes:</label>
+      <label class="form-label mt-1" id="new-text">Notes:</label>
         <textarea name="notes" rows="5" cols="50" class="form-control"></textarea>
-        <input type="submit" value="Add Recipe" class="btn btn-primary mt-3"/>
-        <button class="btn btn-outline-dark mt-3 float-right"><a class="text-decoration-none" href="/">BACK</a></button>
+        <input type="submit" value="Add Recipe" class="btn btn-primary mt-3" id="add-btn"/>
+        <button class="btn btn-outline-dark mt-3 float-right" id="back-btn2"><a class="text-decoration-none" id="back-btn2" href="/">BACK</a></button>
     </div>
   </form>
 </div>

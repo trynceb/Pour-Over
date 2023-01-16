@@ -95,3 +95,26 @@ nav {
     background-color: #5190a3;
     margin-left: 90px;
 }
+
+#new-page {
+    width: 80%;
+}
+
+#new-text {
+    font-family: 'Work Sans', sans-serif;
+    font-size: large;
+    color: #cbcccc;
+    margin: 5px 0 5px 125px;
+}
+
+#add-btn {
+    border-color: #5190a3;
+    background-color: #5190a3;
+    margin: 5px 0 5px 125px;
+}
+
+#back-btn2 {
+    border-color: #b9e4ee;
+    color: #ffffff;
+    margin: 5px 0 5px 5px;
+}
