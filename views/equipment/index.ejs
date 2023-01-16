@@ -3,26 +3,26 @@
 <div class="container mt-5">
     <div class="row">
       <div class="col-6">
-        <h3>Brewers</h3>
-        <ul class="list-group">
+        <h3 id="equipment-text">Brewers</h3>
+        <ul class="list-group" id="equipment-ul">
           <% brewers.forEach(function(b) { %>
-            <li class="list-group-item"><%= b.name %></li>
+            <li class="list-group-item" id="equipment-li"><%= b.name %></li>
           <% }); %>
         </ul>
       </div>
       <div class="col-6">
-        <h3>Grinders</h3>
-        <ul class="list-group">
+        <h3 id="equipment-text">Grinders</h3>
+        <ul class="list-group" id="equipment-ul">
           <% grinders.forEach(function(g) { %>
-            <li class="list-group-item"><%= g.name %></li>
+            <li class="list-group-item" id="equipment-li"><%= g.name %></li>
           <% }); %>
         </ul>
       </div>
     </div>
     <div class="row mt-3">
       <div class="col-12 text-center">
-        <a href="/equipment/new" class="btn btn-primary">Add Equipment</a>
-        <a href="/" class="btn btn-secondary">BACK</a>
+        <a href="/equipment/new" class="btn btn-primary" id="add-equipment-btn">Add Equipment</a>
+        <a href="/" class="btn btn-secondary" id="back-equipment-btn">BACK</a>
       </div>
     </div>
   </div>

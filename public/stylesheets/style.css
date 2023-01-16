@@ -118,3 +118,18 @@ nav {
     color: #ffffff;
     margin: 5px 0 5px 5px;
 }
+
+#equipment-text {
+    font-family: 'Work Sans', sans-serif;
+    color: #cbcccc;
+}
+
+#add-equipment-btn {
+    border-color: #5190a3;
+    background-color: #5190a3;
+    margin: 1rem 5px;
+}
+
+#back-equipment-btn {
+    margin: 1rem 5px;
+}
